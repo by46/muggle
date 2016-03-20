@@ -66,6 +66,9 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'muggle', 'templates'),
+)
 
 WSGI_APPLICATION = 'muggle.wsgi.application'
 
