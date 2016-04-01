@@ -62,4 +62,9 @@ target/
 # PyCharm IDE
 .idea
 
+# Customer
+books/migrations
+db.sqlite3
+
+
 
