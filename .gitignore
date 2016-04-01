@@ -63,8 +63,8 @@ target/
 .idea
 
 # Customer
-books/migrations
-db.sqlite3
+/*/migrations
+/db.sqlite3
 
 
 
