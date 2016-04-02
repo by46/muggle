@@ -1,5 +1,6 @@
 {% extends "books/base.html" %}
 {% block content %}
+    {% csrf_token %}
     {% if books|length_is:"1" %}
         <ul>
             {% for book in books %}
@@ -9,4 +10,9 @@
     {% else %}
         <p>No books are available.</p>
     {% endif %}
+    <form action="/books/add" method="post">
+        <label for="title">Your books name: </label>
+        <input id="title" type="text" name="title">
+        <input type="submit" value="OK">
+    </form>
 {% endblock %}
