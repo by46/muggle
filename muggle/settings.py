@@ -63,13 +63,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'muggle.context_processors.breadcrumb_processor',
             ],
         },
     },
 ]
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'muggle', 'templates'),
-)
+# TEMPLATE_DIRS = (
+#     os.path.join(BASE_DIR, 'muggle', 'templates'),
+# )
 
 WSGI_APPLICATION = 'muggle.wsgi.application'
 
@@ -80,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'muggle',
-        'USER':'root',
-        'PASSWORD':'root',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }

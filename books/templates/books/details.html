@@ -1,0 +1,7 @@
+{% extends "books/base.html" %}
+{% block content %}
+    <h1>{{ book.title | lower }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    {{ breadcrumbs }}
+{% endblock %}

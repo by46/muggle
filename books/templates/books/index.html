@@ -1,0 +1,12 @@
+{% extends "books/base.html" %}
+{% block content %}
+    {% if books|length_is:"1" %}
+        <ul>
+            {% for book in books %}
+                <li>{{ forloop.counter }} <a href="/books/{{ book.id }}/">{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books are available.</p>
+    {% endif %}
+{% endblock %}

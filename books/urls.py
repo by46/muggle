@@ -1,9 +1,9 @@
-from django.conf.urls import patterns, url
-from django.views.generic.detail import DetailView
+from django.conf.urls import url
+
+from .views import BookDetails, BookIndex
 
 __author__ = 'benjamin.c.yan'
 
-patterns = patterns('',
-                    url(r'^book/(?P<object_id>\d+)/$', detail))
-
-
+urlpatterns = [url(r'^$', BookIndex.as_view(), name='index'),
+               url(r'^(?P<pk>\d+)/$', BookDetails.as_view(), name='book'),
+               ]
