@@ -1,8 +1,10 @@
-from django.http import Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render
 from django.views import generic
 
-from .models import Book
 from .forms import NameForm
+from .models import Book
+
 
 # Create your views here.
 
@@ -23,8 +25,11 @@ def add_book(request):
     if request.method == 'POST':
         form = NameForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect("/thanks")
+            return HttpResponseRedirect("/books/thanks")
     else:
         form = NameForm()
-    return Http404()
+    return render(request, 'books/name.html', {'form': form})
 
+
+def thanks(request):
+    return HttpResponse("thanks!")
